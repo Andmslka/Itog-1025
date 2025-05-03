@@ -2,45 +2,285 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой сайт про игры</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Носороги в цифрах</title>
+    <style>
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Шапка с градиентом и анимацией */
+        .header {
+            width: 100%;
+            padding: 40px 0;
+            text-align: center;
+            background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+            background-size: 200% 100%;
+            position: relative;
+            transition: background-position 1s ease;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to left, #e0f7fa, #b2ebf2);
+            background-size: 200% 100%;
+            transform: translateX(-50%);
+            transition: transform 1s ease;
+            z-index: -1;
+        }
+
+        .header:hover::before {
+            transform: translateX(0);
+        }
+
+        .header h1 {
+            color: #004d40;
+            font-size: 2.5em;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {opacity: 0; transform: translateY(-30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        /* Основной контент */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Таблица */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #eee;
+        }
+
+        /* Диаграмма */
+        .diagram-section {
+            margin: 2rem 0;
+        }
+
+        .diagram {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .bar {
+            width: 60px;
+            background: #7873f5;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 12px;
+            border-radius: 5px 5px 0 0;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .africa {
+            background: #ff6ec4;
+        }
+
+        .india {
+            background: #4ade80;
+        }
+
+        .bar:hover {
+            transform: scale(1.1);
+        }
+
+        /* Фотогалерея */
+        .gallery-section {
+            margin: 2rem 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .photo {
+            text-align: center;
+        }
+
+        .photo img {
+            width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .photo img:hover {
+            transform: scale(1.1);
+        }
+
+        .photo p {
+            margin-top: 5px;
+        }
+
+        /* Параллакс */
+        .parallax-section {
+            background-image: url('images/parallax-bg.jpg'); /* Замени на свой путь */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .parallax-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        /* Подвал */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bar {
+                width: 40px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Шапка с анимацией при загрузке -->
-    <header>
-        <h1 class="welcome-animation">Добро пожаловать!</h1>
-    </header>
 
-    <!-- Разделы-филлеры -->
+    <!-- Шапка -->
+    <div class="header">
+        <h1>Статистика, которая тревожит</h1>
+    </div>
+
+    <!-- Основной контент -->
     <main>
-        <!-- Раздел 1 -->
-        <section class="filler-section section1">
-            <h2>🎮 История игр</h2>
-            <p>Узнай, как появились первые видеоигры и как они развивались.</p>
+
+        <!-- Таблица -->
+        <section>
+            <h2>Количество носорогов по годам</h2>
+            <table>
+                <tr>
+                    <th>Год</th>
+                    <th>Африканские носороги</th>
+                    <th>Индийские носороги</th>
+                </tr>
+                <tr>
+                    <td>2010</td>
+                    <td>4 700</td>
+                    <td>2 700</td>
+                </tr>
+                <tr>
+                    <td>2015</td>
+                    <td>3 500</td>
+                    <td>3 300</td>
+                </tr>
+                <tr>
+                    <td>2020</td>
+                    <td>2 700</td>
+                    <td>3 700</td>
+                </tr>
+            </table>
         </section>
 
-        <!-- Раздел 2 -->
-        <section class="filler-section section2">
-            <h2>🕹️ Популярные жанры</h2>
-            <p>Изучи RPG, шутеры, головоломки и другие стили игр.</p>
+        <!-- Диаграмма -->
+        <section class="diagram-section">
+            <h2>Диаграмма: Количество носорогов</h2>
+            <div class="diagram">
+                <div class="bar africa" style="height: 270px;">2010: 4 700</div>
+                <div class="bar india" style="height: 200px;">2010: 2 700</div>
+                <div class="bar africa" style="height: 200px;">2015: 3 500</div>
+                <div class="bar india" style="height: 230px;">2015: 3 300</div>
+                <div class="bar africa" style="height: 150px;">2020: 2 700</div>
+                <div class="bar india" style="height: 250px;">2020: 3 700</div>
+            </div>
         </section>
 
-        <!-- Раздел 3 -->
-        <section class="filler-section section3">
-            <h2>🏆 Советы по прохождению</h2>
-            <p>Как пройти сложные уровни и не сойти с ума 😄</p>
+        <!-- Параллакс -->
+        <section class="parallax-section">
+            <div class="parallax-content">
+                <h2>Почему важно защищать носорогов?</h2>
+                <p>Носороги — важная часть экосистемы. Их исчезновение приведёт к разрушению цепочек питания и потере биоразнообразия.</p>
+            </div>
         </section>
 
-        <!-- Раздел 4 -->
-        <section class="filler-section section4">
-            <h2>🎮 Моя любимая игра</h2>
-            <p>Расскажи, почему тебе нравится твоя любимая игра.</p>
+        <!-- Фотогалерея -->
+        <section class="gallery-section">
+            <h2>Фото носорогов</h2>
+            <div class="gallery">
+                <div class="photo">
+                    <img src="images/rhino1.jpg" alt="Африканский носорог">
+                    <p>Африканский носорог</p>
+                </div>
+                <div class="photo">
+                    <img src="images/rhino2.jpg" alt="Индийский носорог">
+                    <p>Индийский носорог</p>
+                </div>
+                <div class="photo">
+                    <img src="images/rhino3.jpg" alt="Молодой носорог">
+                    <p>Молодой носорог</p>
+                </div>
+            </div>
         </section>
+
     </main>
 
     <!-- Подвал -->
     <footer>
-        <p>© 2025 Все права защищены</p>
+        <p>© 2025 Защитим носорогов!</p>
     </footer>
+
 </body>
 </html>
