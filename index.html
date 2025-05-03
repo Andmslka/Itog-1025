@@ -6,33 +6,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Шапка с анимацией -->
+    <!-- Шапка с анимацией при загрузке -->
     <header>
-        <h1 id="welcome" class="hidden">Добро пожаловать!</h1>
+        <h1 class="welcome-animation">Добро пожаловать!</h1>
     </header>
 
     <!-- Разделы-филлеры -->
     <main>
         <!-- Раздел 1 -->
-        <section class="filler-section hidden">
+        <section class="filler-section section1">
             <h2>🎮 История игр</h2>
             <p>Узнай, как появились первые видеоигры и как они развивались.</p>
         </section>
 
         <!-- Раздел 2 -->
-        <section class="filler-section hidden">
+        <section class="filler-section section2">
             <h2>🕹️ Популярные жанры</h2>
             <p>Изучи RPG, шутеры, головоломки и другие стили игр.</p>
         </section>
 
         <!-- Раздел 3 -->
-        <section class="filler-section hidden">
+        <section class="filler-section section3">
             <h2>🏆 Советы по прохождению</h2>
             <p>Как пройти сложные уровни и не сойти с ума 😄</p>
         </section>
 
         <!-- Раздел 4 -->
-        <section class="filler-section hidden">
+        <section class="filler-section section4">
             <h2>🎮 Моя любимая игра</h2>
             <p>Расскажи, почему тебе нравится твоя любимая игра.</p>
         </section>
@@ -42,24 +42,5 @@
     <footer>
         <p>© 2025 Все права защищены</p>
     </footer>
-
-    <!-- Скрипт для анимации -->
-    <script>
-        // Функция проверяет, виден ли элемент на экране
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, {
-            threshold: 0.1 // Анимация начнётся, когда 10% элемента появится на экране
-        });
-
-        // Применяем к элементам с классом "hidden"
-        document.querySelectorAll('.hidden').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
