@@ -2,26 +2,64 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Параллакс для игр</title>
+    <title>Мой сайт про игры</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Шапка -->
+    <!-- Шапка с анимацией -->
     <header>
-        <h1>Мир компьютерных игр</h1>
+        <h1 id="welcome" class="hidden">Добро пожаловать!</h1>
     </header>
 
-    <!-- Параллакс-раздел -->
+    <!-- Разделы-филлеры -->
     <main>
-        <div class="content">
-            <h2>Добро пожаловать в киберпространство</h2>
-            <p>Исследуйте историю, технологии и будущее видеоигр.</p>
-        </div>
+        <!-- Раздел 1 -->
+        <section class="filler-section hidden">
+            <h2>🎮 История игр</h2>
+            <p>Узнай, как появились первые видеоигры и как они развивались.</p>
+        </section>
+
+        <!-- Раздел 2 -->
+        <section class="filler-section hidden">
+            <h2>🕹️ Популярные жанры</h2>
+            <p>Изучи RPG, шутеры, головоломки и другие стили игр.</p>
+        </section>
+
+        <!-- Раздел 3 -->
+        <section class="filler-section hidden">
+            <h2>🏆 Советы по прохождению</h2>
+            <p>Как пройти сложные уровни и не сойти с ума 😄</p>
+        </section>
+
+        <!-- Раздел 4 -->
+        <section class="filler-section hidden">
+            <h2>🎮 Моя любимая игра</h2>
+            <p>Расскажи, почему тебе нравится твоя любимая игра.</p>
+        </section>
     </main>
 
     <!-- Подвал -->
     <footer>
         <p>© 2025 Все права защищены</p>
     </footer>
+
+    <!-- Скрипт для анимации -->
+    <script>
+        // Функция проверяет, виден ли элемент на экране
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1 // Анимация начнётся, когда 10% элемента появится на экране
+        });
+
+        // Применяем к элементам с классом "hidden"
+        document.querySelectorAll('.hidden').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
