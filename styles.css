@@ -7,8 +7,19 @@
 
 body, html {
     font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
     background: #f0f0f0;
+}
+
+/* Анимация появления заголовка при загрузке */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Шапка */
@@ -19,16 +30,9 @@ header {
     padding: 5rem 1rem 3rem;
 }
 
-/* Анимация появления */
-.hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease-out;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
+/* Заголовок с анимацией */
+header h1 {
+    animation: fadeInDown 1.5s ease-out;
 }
 
 /* Разделы */
@@ -39,6 +43,32 @@ header {
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Анимация для разделов при загрузке */
+.section1 {
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.section2 {
+    animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+.section3 {
+    animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+.section4 {
+    animation: fadeInUp 1s ease-out 1.1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Подвал */
