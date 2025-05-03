@@ -1,0 +1,50 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 1.5rem;
+}
+
+/* Параллакс-эффект */
+main {
+    background-image: url('parallax-bg.jpg'); /* Путь к вашей картинке */
+    background-attachment: fixed; /* Фиксированный фон */
+    background-size: cover; /* Растяжение на весь экран */
+    background-position: center; /* Центрирование */
+    height: 100vh; /* Высота равна высоте экрана */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Контент внутри параллакса */
+.content {
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Подвал */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
