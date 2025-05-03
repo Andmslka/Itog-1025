@@ -7,38 +7,38 @@
 
 body, html {
     font-family: Arial, sans-serif;
-    height: 100%;
     scroll-behavior: smooth;
+    background: #f0f0f0;
 }
 
 /* Шапка */
 header {
-    background: #1a1a1a;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
-    font-size: 1.5rem;
+    padding: 5rem 1rem 3rem;
 }
 
-/* Параллакс-эффект */
-main {
-    background-image: url('parallax-bg.jpg'); /* Путь к вашей картинке */
-    background-attachment: fixed; /* Фиксированный фон */
-    background-size: cover; /* Растяжение на весь экран */
-    background-position: center; /* Центрирование */
-    height: 100vh; /* Высота равна высоте экрана */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+/* Анимация появления */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
 }
 
-/* Контент внутри параллакса */
-.content {
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Разделы */
+.filler-section {
+    background: white;
+    margin: 2rem auto;
     padding: 2rem;
+    max-width: 800px;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Подвал */
